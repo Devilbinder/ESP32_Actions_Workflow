@@ -30,4 +30,7 @@ jobs:
 
       - name: Export Tools
         run: . $HOME/esp/esp-idf/export.sh
+
+      - name: Test Build
+        run: idf.py build ~/esp/esp-idf/examples/wifi/getting_started/station
         
