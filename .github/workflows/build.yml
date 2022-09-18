@@ -33,5 +33,5 @@ jobs:
         run: ~/esp/esp-idf/install.sh esp32
 
       - name: Test Build
-        run: . $HOME/esp/esp-idf/export.sh && idf.py ~/esp/esp-idf/examples/wifi/getting_started/station build
+        run: . $HOME/esp/esp-idf/export.sh &&  cd ~/esp/esp-idf/examples/wifi/getting_started/station && idf.py build
         
