@@ -18,6 +18,11 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Packages install
         run: sudo apt-get install git wget flex bison gperf python3 python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0
-
-      - name:
-        run: python --version
+      
+      - name: python version
+        run: python -version
+        
+      - name: clone idf
+        run: mkdir -p ~/esp
+        run: cd ~/esp
+        run: git clone --recursive https://github.com/espressif/esp-idf.git
