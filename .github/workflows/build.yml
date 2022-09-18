@@ -20,9 +20,6 @@ jobs:
 
       - name: Packages Install
         run: sudo apt-get install git wget flex bison gperf python3 python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0
-      
-      - name: Python Version
-        run: python --version
 
       - name: Clone IDF
         run: mkdir -p ~/esp && cd ~/esp && git clone -b ${{env.IDF_VERSION}} --recursive https://github.com/espressif/esp-idf.git
