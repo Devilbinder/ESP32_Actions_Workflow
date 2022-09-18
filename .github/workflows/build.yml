@@ -7,6 +7,9 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 
+env:
+  EXPORT_IDF: . $HOME/esp/esp-idf/export.sh
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -29,8 +32,8 @@ jobs:
         run: ~/esp/esp-idf/install.sh esp32
 
       - name: Export Tools
-        run: . $HOME/esp/esp-idf/export.sh
+        run: $EXPORT_IDF
 
       - name: Test Build
-        run: idf.py build ~/esp/esp-idf/examples/wifi/getting_started/station
+        run: $EXPORT_IDF && idf.py build ~/esp/esp-idf/examples/wifi/getting_started/station
         
