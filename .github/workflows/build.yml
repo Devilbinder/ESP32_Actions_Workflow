@@ -8,7 +8,6 @@ on:
   workflow_dispatch:
 
 env:
-  EXPORT_IDF: ". ~/esp/esp-idf/export.sh"
   IDF_VERSION: origin/release/v4.2
 
 jobs:
@@ -27,7 +26,7 @@ jobs:
         run: python --version
 
       - name: Clone IDF
-        run: mkdir -p ~/esp && cd ~/esp && git clone --recursive https://github.com/espressif/esp-idf.git
+        run: mkdir -p ~/esp && cd ~/esp && git clone -b $IDF_VERSION --recursive https://github.com/espressif/esp-idf.git
 
       - name: Setup Tools
         run: ~/esp/esp-idf/install.sh esp32
