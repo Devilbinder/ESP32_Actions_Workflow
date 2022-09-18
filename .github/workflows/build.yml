@@ -33,8 +33,8 @@ jobs:
         run: ~/esp/esp-idf/install.sh esp32
 
       - name: Export Tools
-        run: . $HOME ~/esp/esp-idf/export.sh
+        run: . $HOME/esp/esp-idf/export.sh
 
       - name: Test Build
-        run: . $HOME ~/esp/esp-idf/export.sh && idf.py build ~/esp/esp-idf/examples/wifi/getting_started/station
+        run: . $HOME/esp/esp-idf/export.sh && idf.py build ~/esp/esp-idf/examples/wifi/getting_started/station
         
