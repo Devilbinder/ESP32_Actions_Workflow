@@ -21,8 +21,6 @@ jobs:
       
       - name: python version
         run: python -version
-        
+
       - name: clone idf
-        run: mkdir -p ~/esp
-        run: cd ~/esp
-        run: git clone --recursive https://github.com/espressif/esp-idf.git
+        run: mkdir -p ~/esp && cd ~/esp && git clone --recursive https://github.com/espressif/esp-idf.git
