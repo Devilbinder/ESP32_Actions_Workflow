@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 env:
-  IDF_VERSION: origin/release/v4.2
+  IDF_VERSION: release/v4.2
 
 jobs:
   build:
