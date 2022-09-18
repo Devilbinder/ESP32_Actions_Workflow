@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 env:
-  EXPORT_IDF: . $HOME/esp/esp-idf/export.sh
+  EXPORT_IDF: ". $HOME/esp/esp-idf/export.sh"
 
 jobs:
   build:
