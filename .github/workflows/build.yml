@@ -26,5 +26,5 @@ jobs:
         run: mkdir -p ~/esp && cd ~/esp && git clone --recursive https://github.com/espressif/esp-idf.git
 
       - name: Set up the tools
-        run: cd ~/esp/esp-idf/install.sh esp32
+        run: ~/esp/esp-idf/install.sh esp32
         
