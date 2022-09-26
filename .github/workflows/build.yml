@@ -13,20 +13,24 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    container: bindertronics/esp32-idf:4.2-0.0.1
+    
     steps:
 
       - uses: actions/checkout@v3
 
-      - name: Packages Install
-        run: sudo apt-get install git wget flex bison gperf python3 python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0
+      - name: LS
+      - run: ls
 
-      - name: Clone IDF
-        run: mkdir -p ~/esp && cd ~/esp && git clone -b ${{env.IDF_VERSION}} --recursive https://github.com/espressif/esp-idf.git
+      # - name: Pull Image
+      #   run: docker pull docker build -t station . 
 
-      - name: Setup Tools
-        run: ~/esp/esp-idf/install.sh esp32
+      # - name: Clone IDF
+      #   run: mkdir -p ~/esp && cd ~/esp && git clone -b ${{env.IDF_VERSION}} --recursive https://github.com/espressif/esp-idf.git
 
-      - name: Test Build
-        run: . $HOME/esp/esp-idf/export.sh && cd ~/esp/esp-idf/examples/wifi/getting_started/station && idf.py build
+      # - name: Setup Tools
+      #   run: ~/esp/esp-idf/install.sh esp32
+
+      # - name: Test Build
+      #   run: . $HOME/esp/esp-idf/export.sh && cd ~/esp/esp-idf/examples/wifi/getting_started/station && idf.py build
         
