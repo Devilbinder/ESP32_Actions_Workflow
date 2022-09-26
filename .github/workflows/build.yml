@@ -13,7 +13,6 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: bindertronics/esp32-idf:4.2-0.0.1
     
     steps:
 
