@@ -2,7 +2,7 @@ name: Build
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "docker" ]
   pull_request:
     branches: [ "main" ]
   workflow_dispatch:
@@ -20,6 +20,9 @@ jobs:
 
       - name: LS
         run: ls
+
+      - name: Build
+        run: docker build -t station .
 
       # - name: Pull Image
       #   run: docker pull docker build -t station . 
