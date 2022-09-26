@@ -27,18 +27,6 @@ jobs:
       - name: Copy files
         run: docker run --rm --entrypoint cat station ./build/wifi_station.bin > ./wifi_station.bin
 
-      - name: LS2
-        run: ls
-
-      # - name: Pull Image
-      #   run: docker pull docker build -t station . 
-
-      # - name: Clone IDF
-      #   run: mkdir -p ~/esp && cd ~/esp && git clone -b ${{env.IDF_VERSION}} --recursive https://github.com/espressif/esp-idf.git
-
-      # - name: Setup Tools
-      #   run: ~/esp/esp-idf/install.sh esp32
-
-      # - name: Test Build
-      #   run: . $HOME/esp/esp-idf/export.sh && cd ~/esp/esp-idf/examples/wifi/getting_started/station && idf.py build
+      - name: Artifact
+        run: mkdir build && cp ./wifi_station.bin build/wifi_station.bin
         
