@@ -24,6 +24,12 @@ jobs:
       - name: Build
         run: docker build -t station .
 
+      - name: Copy files
+        run: docker run --rm --entrypoint cat station ./build/wifi_station.bin > ./wifi_station.bin
+
+      - name: LS2
+        run: ls
+
       # - name: Pull Image
       #   run: docker pull docker build -t station . 
 
