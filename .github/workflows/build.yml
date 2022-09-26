@@ -27,8 +27,7 @@ jobs:
       - name: Artifact
         run: mkdir build && cp ./wifi_station.bin build/wifi_station.bin
         
-      - name: Publish Artifact
-        uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v3
         with: build
           name: build
-          path: build
+          path: ./build
