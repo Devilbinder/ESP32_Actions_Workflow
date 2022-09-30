@@ -12,25 +12,25 @@ env:
 
 jobs:
   build:
-    runs-on: bindertronics/esp32-idf:4.2-0.0.2
+    runs-on: ubuntu-latest
+    container:
+      image: bindertronics/esp32-idf:4.2-0.0.2
     
     steps:
-
       - uses: actions/checkout@v3
 
-      - name: cd
-        run: cd ./station
-
       - name: Build
-        run: idf.py build
+        run: |
+          cd ./station
+          idf.py build
 
       - name: Artifact
         run: |
           mkdir build
-          cp ./${{env.BULD_NAME}}.bin build/${{env.BULD_NAME}}.bin
+          cp ./${{env.BULD_NAME}}.bin ./station/build/${{env.BULD_NAME}}.bin
         
       - name: Publish Artifact
         uses: actions/upload-artifact@v3
         with:
           name: build
-          path: ./build
+          path: ./station/build
