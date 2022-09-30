@@ -21,8 +21,8 @@ jobs:
       - name: Build
         run: |
           cd ./station
-          . /root/esp/esp-idf/export.sh
-          idf.py build
+          . /root/esp/esp-idf/export.sh && idf.py build
+          
 
       - name: Artifact
         run: |
