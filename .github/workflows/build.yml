@@ -13,8 +13,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: bindertronics/esp32-idf:4.2-0.0.2
+    container: bindertronics/esp32-idf:4.2-0.0.2
     
     steps:
       - uses: actions/checkout@v3
