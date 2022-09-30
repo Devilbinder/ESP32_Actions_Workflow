@@ -12,17 +12,17 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: bindertronics/esp32-idf:4.2-0.0.2
     
     steps:
 
       - uses: actions/checkout@v3
 
-      - name: Build
-        run: docker build -t ${{env.BULD_NAME}} .
+      - name: cd
+        run: cd ./station
 
-      - name: Copy files
-        run: docker run --rm --entrypoint cat ${{env.BULD_NAME}} ./build/${{env.BULD_NAME}}.bin > ./${{env.BULD_NAME}}.bin
+      - name: Build
+        run: idf.py build
 
       - name: Artifact
         run: |
